@@ -1,55 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>TDP</title>
-  <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= csrf_meta_tags %>
-</head>
-
+    <title>TDP</title>
+    <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+  </head>
   <body>
-      <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar5">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
-        <a href<%= link_to 'Home', home_index_path %>><%= image_tag("dupa.png", class: "logo") %>
-        </a>
-    
+          </button>
+          <%= link_to image_tag("dupa.png", alt: "logo", class: "logo"), "/" %>
+        </div>
+        <div id="navbar5" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right", id="li">
+            <li><%= link_to 'Home', home_index_path %></li>
+            <li><%= link_to 'About', home_about_path %></li>
+            <li><%= link_to 'Faq', home_faq_path %></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
       </div>
-      <div id="navbar5" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', home_index_path %></li>
-          <li><%= link_to 'About', home_about_path %></li>
-          <<li><%= link_to 'Faq', home_faq_path %></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+      <!--/.container-fluid -->
+    </nav>
+    <%= yield %>
     </div>
-    <!--/.container-fluid -->
-  </nav>
-
-
-    
-
-    
-      <%= yield %>
-    </div>
-
- </body>
-    <footer>
-  &copy; 2018 TDP
-</footer>
- 
+  </body>
+  <footer>
+    &copy; 2018 TDP
+  </footer>
 </html>
-
