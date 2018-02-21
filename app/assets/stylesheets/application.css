@@ -75,3 +75,7 @@ ul.nav {
     @media (min-width: 1200px) { font-size: 12em; }
   }
 }
+
+#image_1 {
+  width: 50px;
+}
