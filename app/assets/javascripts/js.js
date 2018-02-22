@@ -1,4 +1,3 @@
-$( document ).ready(function() {
 var navbarHeight = $('.navbar').height(); 
 
 $(window).scroll(function() {
@@ -31,5 +30,7 @@ $(window).scroll(function() {
   } else {
     $('.navbar').css({"box-shadow": "none"});
   }
-});
+  
+  
+  
 });
