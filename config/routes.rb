@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   resources :products
-  root 'home#index'
+
+  root "home#landing_page"
+
+  get "home/index"
+
+  get "home/landing_page"
   
-  get 'home/index'
+  get "home/about"
 
-  get 'home/about'
+  get "home/contact"
 
-  get 'home/contact'
+  get "home/faq"
 
-  get 'home/faq'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
