@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def landing_page
-    @featured_product = Product.first
+    @featured_product = Product.order("RANDOM()").first
   end
 
   def contact
