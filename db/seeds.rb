@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
-Product.create(name: "dynamic website", description: "Expensive stuff!")
-Product.create(name: "static website", description: "cheap stuff!")
-Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!")
+Product.create(name: "dynamic website", description: "Expensive stuff!", image_url: "http://edtechteacher.org/wp-content/uploads/2017/01/5-Things-to-include-in-Digital-Portfolio-EdTechTeacher.png")
+Product.create(name: "static website", description: "cheap stuff!", image_url: "http://wwwcdn.howdesign.com/wp-content/uploads/portfolio-628.jpg")
+Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!", image_url: "http://catlintucker.com/wp-content/uploads/2013/07/Screen-shot-2013-07-06-at-9.24.31-AM.png")
