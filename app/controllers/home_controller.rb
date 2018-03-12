@@ -6,7 +6,6 @@ class HomeController < ApplicationController
   end
 
   def landing_page
-    @featured_product = Product.order("RANDOM()").first
     @products = Product.limit(3)
 
   end

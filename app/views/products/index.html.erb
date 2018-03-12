@@ -1,9 +1,8 @@
 <div class="container-fluid">
+	<br/>
+	<%= link_to 'New Product', new_product_path, class: "btn btn-primary pull-right" %>
+	<br>
   <div class="row">
-    <% @products.each do |product| %>
-    <%= render partial: "product", locals: {product: product} %>
-    <% end %>
+    <%= render @products %>
   </div>
 </div>
-<br>
-<%= link_to 'New Product', new_product_path %>
