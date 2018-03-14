@@ -33,6 +33,12 @@
             <li><%= link_to 'Faq', home_faq_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Products', products_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Orders', orders_path, class: 'btn btn-default' %></li>
+
+            <li><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+  <%= form.label :q, 'Search for:' %>
+  <%= form.text_field :q, id: 'q', value: params[:q] %>
+  <%= form.submit 'Search' %>
+<% end %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
