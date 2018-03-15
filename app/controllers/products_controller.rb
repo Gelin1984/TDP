@@ -10,6 +10,17 @@ class ProductsController < ApplicationController
   else
     @products = Product.all
   end
+  search_term = params[:q]
+
+if Rails.env.development?
+
+@products = Product.where("name LIKE ?", "%#{search_term}%")
+
+else
+
+@products = Product.where("name ilike ?", "%#{search_term}%")
+
+end
 end
 
   # GET /products/1
