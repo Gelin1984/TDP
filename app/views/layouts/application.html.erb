@@ -30,6 +30,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'About', home_about_path, class: 'btn btn-default' %></li>
+            <li><%= link_to 'Contact', home_contact_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Faq', home_faq_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Products', products_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Orders', orders_path, class: 'btn btn-default' %></li>
@@ -38,6 +39,7 @@
   <%= form.label :q, 'Search for:' %>
   <%= form.text_field :q, id: 'q', value: params[:q] %>
   <%= form.submit 'Search' %>
+
 <% end %></li>
           </ul>
         </div><!--/.nav-collapse -->

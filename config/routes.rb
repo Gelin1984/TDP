@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :products
 
-  root "home#about"
+  root "home#index"
 
   get "home/index"
+
+  get "home/about"
 
   get "home/landing_page"
   
@@ -12,9 +14,8 @@ Rails.application.routes.draw do
   get "home/contact"
 
   get "home/faq"
-  
 
-  
+  post "home/thank_you"
   
   resources :orders, only: [:index, :show, :create, :destroy]
 
