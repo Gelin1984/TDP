@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <center><title>TDP</title></center>
-   
+    <center>
+      <title>TDP</title>
+    </center>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,22 +12,21 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-        <!-- Fixed navbar -->
+    <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
           </button>
           <div class="small-logo-container">
             <a class="small-logo" href="#">TDP</a>
           </div>
         </div>
         <div class="navbar-collapse collapse">
-          
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'About', home_about_path, class: 'btn btn-default' %></li>
@@ -34,42 +34,49 @@
             <li><%= link_to 'Faq', home_faq_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Products', products_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'Orders', orders_path, class: 'btn btn-default' %></li>
-
-            <li><%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-  <%= form.label :q, 'Search for:' %>
-  <%= form.text_field :q, id: 'q', value: params[:q] %>
-  <%= form.submit 'Search' %>
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
-<% end %></li>
+            <li>
+              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <%= form.label :q, 'Search for:' %>
+              <%= form.text_field :q, id: 'q', value: params[:q] %>
+              <%= form.submit 'Search' %>
+              <p class="navbar-text pull-right">
+                <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>.
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                <% end %>
+              </p>
+              <% end %>
+            </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
       </div>
     </div>
-
     <div class="container-fluid big-logo-row">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 big-logo-container">
-           <center><h1 class="big-logo">TDP</h1></center>
-          </div><!--/.col-xs-12 -->
-        </div><!--/.row -->
-      </div><!--/.container -->
-    </div><!--/.container-fluid -->
-   <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+            <center>
+              <h1 class="big-logo">TDP</h1>
+            </center>
+          </div>
+          <!--/.col-xs-12 -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/.container -->
+    </div>
+    <!--/.container-fluid -->
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
     </div>
   </body>
