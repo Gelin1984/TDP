@@ -13,3 +13,4 @@ config.action_mailer.smtp_settings = {
     :password  => ENV["SENDGRID_PASSWORD"], # SMTP password is any valid API key, when user_name is "apikey".
     :authentication => 'login',
     :domain => 'heroku.com', # your domain to identify your server when connecting
+}
