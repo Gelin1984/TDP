@@ -5,7 +5,7 @@ require_relative 'application'
 Rails.application.initialize!
 
 #config/environments/production.rb
-config.action_mailer.smtp_settings = {
+ActionMailer::Base.smtp_settings = {
     :address   => "smtp.sendgrid.net",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
