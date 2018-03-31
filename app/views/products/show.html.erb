@@ -1,30 +1,38 @@
 <div class="row">
-    <div class="col-sm-3"></div>
+    <div class="col-md-4"></div>
 
     <div class="col-sm-6">
+    	<br/>
+    	<br/>
+    	<center>
 <p>
-  <center><strong>Name:</strong>
+  <span class="glyphicon glyphicon-globe"><strong>Product</strong></span>
+  <br>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <span class="glyphicon glyphicon-hand-right"><strong> Description</strong></span>
+  <br>
   <%= @product.description %>
 </p>
-
 <p>
-  <strong>Image url:</strong>
-  <%= image_tag @product.image_url, class: "img-responsive" %>
-</p>
-
-<p>
- <strong>Price:</strong>
+ <span class="glyphicon glyphicon-usd"><strong>Price</strong>
+ <br>
   <%= @product.price %>
 </p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<p>
+	<br>
+  <span class="glyphicon glyphicon-phone"><strong>Image url</strong>
+  <br>
+  <br>
+  <%= image_tag @product.image_url, class: "img-responsive" %>
+</p>
+<br/>
+<center>
+<%= link_to 'Edit', edit_product_path(@product),class: "btn btn-primary" %> 
+<%= link_to 'Back', products_path, class: "btn btn-primary" %>
+</center>
 </center>
 
 </div>
