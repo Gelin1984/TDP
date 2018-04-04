@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-  if params[:q]
+    if params[:q]
     search_term = params[:q]
     @products = Product.search(search_term)
   else
@@ -12,9 +12,9 @@ class ProductsController < ApplicationController
   end
   search_term = params[:q]
 
-if Rails.env.development?
+    if Rails.env.development?
 
-@products = Product.where("name LIKE ?", "%#{search_term}%")
+  @products = Product.where("name LIKE ?", "%#{search_term}%")
 
 else
 
@@ -24,10 +24,10 @@ end
 end
 
   # GET /products/1
-  # GET /products/1.json
-  def show
-    @comments = @product.comments.order("created_at DESC")
-  end
+# GET /products/1.json
+def show
+  @comments = @product.comments.order("created_at DESC")
+end
 
   # GET /products/new
   def new

@@ -31,6 +31,9 @@ $(window).scroll(function() {
     $('.navbar').css({"box-shadow": "none"});
   }
   
+  $(document).on('turbolinks:load', function(){
+    $('.rating').raty();
+});
   
   
 });
