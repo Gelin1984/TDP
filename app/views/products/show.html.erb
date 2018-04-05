@@ -10,7 +10,6 @@
   <br>
   <%= @product.name %>
 </p>
-
 <p>
   <span class="glyphicon glyphicon-hand-right"><strong> Description</strong></span>
   <br>
@@ -24,6 +23,7 @@
 <p>
 	<br>
   <span class="glyphicon glyphicon-phone"><strong>Image url</strong>
+    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
   <br>
   <br>
   <%= image_tag @product.image_url, class: "img-responsive" %>
