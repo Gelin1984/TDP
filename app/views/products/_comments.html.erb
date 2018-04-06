@@ -6,6 +6,8 @@
             <p><%= "Rating: #{comment.rating}/5" %></p>
             <div class="rated rated-list" data-score="<%= comment.rating %>"></div>
             <p><%= comment.body %></p>
+
         </div>
     <% end %>
 </div>
+<p><center><%= link_to 'Destroy That Comment!', @comment,class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?',  } %></p></center>

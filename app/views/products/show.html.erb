@@ -1,41 +1,47 @@
 <div class="row">
-    <div class="col-md-4"></div>
-
-    <div class="col-sm-6">
-    	<br/>
-    	<br/>
-    	<center>
-<p>
-  <span class="glyphicon glyphicon-globe"><strong>Product</strong></span>
-  <br>
-  <%= @product.name %>
-</p>
-<p>
-  <span class="glyphicon glyphicon-hand-right"><strong> Description</strong></span>
-  <br>
-  <%= @product.description %>
-</p>
-<p>
- <span class="glyphicon glyphicon-usd"><strong>Price</strong>
- <br>
-  <%= @product.price %>
-</p>
-<p>
-	<br>
-  <span class="glyphicon glyphicon-phone"><strong>Image url</strong>
-    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-  <br>
-  <br>
-  <%= image_tag @product.image_url, class: "img-responsive" %>
-</p>
-<br/>
-<center>
-<%= link_to 'Edit', edit_product_path(@product),class: "btn btn-primary" %> 
-<%= link_to 'Back', products_path, class: "btn btn-primary" %>
-</center>
-</center>
-
+  <div class="col-md-4"></div>
+  <div class="col-sm-6">
+    <br/>
+    <br/>
+    <center>
+      <p>
+        <span class="glyphicon glyphicon-globe"><strong>Product</strong></span>
+        <br>
+        <%= @product.name %>
+      </p>
+      <p>
+        <span class="glyphicon glyphicon-hand-right"><strong> Description</strong></span>
+        <br>
+        <%= @product.description %>
+      </p>
+      <p>
+        <span class="glyphicon glyphicon-usd"><strong>Price</strong>
+        <br>
+        <%= @product.price %>
+      </p>
+      <p>
+        <br>
+        <span class="glyphicon glyphicon-phone"><strong>Image url</strong>
+      <p>Average Rating: 
+      <div class="rated" data-score="<%= @product.average_rating %>"></div>
+      </p>
+      <br>
+      <br>
+      <%= image_tag @product.image_url, class: "img-responsive" %>
+      </p>
+      <br/>
+      <center>
+        <%= link_to 'Edit', edit_product_path(@product),class: "btn btn-primary" %> 
+        <%= link_to 'Back', products_path, class: "btn btn-primary" %>
+        <div class="col-md-6 col-lg-6 col-xs-12 product_div">
+      <h4 class="product_title"> <span class="glyphicon glyphicon-pencil"></span> Comments </h4>
+      <div id="comments">
+        <div class="alert alert-info" style="display: none" role="alert">
+        A new comment was posted!</div>
+        <%= render 'new_comment' %>
+        <%= render 'comments' %>
+      </div>
+      </center>
+    </center>
+  </div>
 </div>
-</div>
-<%= render 'new_comment' %>
-<%= render 'comments' %>
