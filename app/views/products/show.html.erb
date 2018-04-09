@@ -40,7 +40,8 @@
         A new comment was posted!</div>
         <%= render 'new_comment' %>
         <%= render 'comments' %>
-      </div>
+        <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>     
+       </div>
       </center>
     </center>
   </div>

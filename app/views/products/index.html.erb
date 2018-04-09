@@ -5,5 +5,8 @@
 	<br/>
   <div class="row">
     <%= render @products %>
+    <div class="pages col-sm-12">
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+  </div>
   </div>
 </div>
