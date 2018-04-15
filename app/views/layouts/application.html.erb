@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <center>
-      <title>TDP</title>
-    </center>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,21 +9,18 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-          <div class="small-logo-container">
-            <a class="small-logo" href="#">TDP</a>
-          </div>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <header class="main_h">
+      <div class="row">
+        <a class="logo" href="#">P/F</a>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class = "nav">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'About', home_about_path, class: 'btn btn-default' %></li>
@@ -53,24 +47,17 @@
             </li>
           </ul>
         </div>
-        <!--/.nav-collapse -->
+      </div>
+      <!-- / row -->
+    </header>
+    <div class="hero">
+      <h1><span></span><br>Teacher Digital Portfolio</h1>
+      <br/>
+      <%= link_to 'Click here to learn more about me', home_about_path, class: 'btn btn-default btn -lg' %>
+      <div class="mouse">
+        <span></span>
       </div>
     </div>
-    <div class="container-fluid big-logo-row">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 big-logo-container">
-            <center>
-              <h1 class="big-logo">TDP</h1>
-            </center>
-          </div>
-          <!--/.col-xs-12 -->
-        </div>
-        <!--/.row -->
-      </div>
-      <!--/.container -->
-    </div>
-    <!--/.container-fluid -->
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
