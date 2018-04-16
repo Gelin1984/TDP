@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,10 +11,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <header class="main_h">
+   
+   
+    <header class = “main_h”>
       <div class="row">
         <a class="logo" href="#">P/F</a>
         <div class="mobile-toggle">
@@ -20,7 +21,7 @@
           <span></span>
           <span></span>
         </div>
-        <div class = "nav">
+        <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path, class: 'btn btn-default' %></li>
             <li><%= link_to 'About', home_about_path, class: 'btn btn-default' %></li>
@@ -46,10 +47,10 @@
               <% end %>
             </li>
           </ul>
+          </nav>
         </div>
-      </div>
+      </header>
       <!-- / row -->
-    </header>
     <div class="hero">
       <h1><span></span><br>Teacher Digital Portfolio</h1>
       <br/>
@@ -71,3 +72,5 @@
     &copy; 2018 TDP
   </footer>
 </html>
+
+
