@@ -10,55 +10,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
   </head>
+  
   <body>
-   
-   
-    <header class = “main_h”>
-      <div class="row">
-        <a class="logo" href="#">P/F</a>
-        <div class="mobile-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-brand">
+          <%= link_to 'P/F', root_path %>
         </div>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Home', root_path, class: 'btn btn-default' %></li>
-            <li><%= link_to 'About', home_about_path, class: 'btn btn-default' %></li>
-            <li><%= link_to 'Contact', home_contact_path, class: 'btn btn-default' %></li>
-            <li><%= link_to 'Faq', home_faq_path, class: 'btn btn-default' %></li>
-            <li><%= link_to 'Products', products_path, class: 'btn btn-default' %></li>
-            <li><%= link_to 'Orders', orders_path, class: 'btn btn-default' %></li>
-            <li>
-              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.label :q, 'Search for:' %>
-              <%= form.text_field :q, id: 'q', value: params[:q] %>
-              <%= form.submit 'Search' %>
-              <p class="navbar-text pull-right">
-                <% if user_signed_in? %>
-                Logged in as <strong><%= current_user.email %></strong>.
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                <% else %>
-                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                <% end %>
-              </p>
-              <% end %>
-            </li>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'About', home_about_path %></li>
+            <li><%= link_to 'Contact', home_contact_path %></li>
+            <li><%= link_to 'Faq', home_faq_path %></li>
+            <li><%= link_to 'Products', products_path %></li>
           </ul>
-          </nav>
-        </div>
-      </header>
+
+          <div class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
+              <% if user_signed_in? %>
+                <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                 <li> <%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+              <% else %>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Login", new_user_session_path  %></li>
+              <% end %>
+            </ul>
+
+            <%= form_with(url: products_path, method: 'get', local: true, class: 'navbar-form navbar-right search-form') do |form| %>
+              <div class="input-group add-on">
+                <%= form.text_field :q, id: 'q', class: "form-control", placeholder: "Search ...", value: params[:q] %>
+                <div class="input-group-btn">
+                  <%= form.submit 'Go', class:"btn btn-default", id:"btn-search"%>
+                </div><!-- input-group-btn -->
+              </div>
+            <% end %>
+          </div><!-- right -->
+
+        </div><!-- myNavbar -->
+
+      </div><!-- end container-fluid -->
+    </nav><!-- end navbar -->
+
       <!-- / row -->
-    <div class="hero">
-      <h1><span></span><br>Teacher Digital Portfolio</h1>
-      <br/>
-      <%= link_to 'Click here to learn more about me', home_about_path, class: 'btn btn-default btn -lg' %>
-      <div class="mouse">
-        <span></span>
-      </div>
-    </div>
     <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -72,5 +67,3 @@
     &copy; 2018 TDP
   </footer>
 </html>
-
-
