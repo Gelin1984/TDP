@@ -4,7 +4,7 @@ describe Product do
 
  context 'when the product has comments' do
 
-	let(:product) { Product.create!(name: "Awesome Website", description: "Buy that", colour: "red", price: "30") }
+	let(:product) { Product.create!(name: "Awesome Website", description: "Buy that", price: "30") }
 	let(:user) { User.create!(email: "monkey@gmail.com",first_name: "User", last_name: "random",admin: false, password: "blablabla") }
 
 	before do
