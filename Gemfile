@@ -43,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'sqlite3', '~> 1.3.13'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
@@ -63,4 +64,5 @@ gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'rails-controller-testing'
+
 

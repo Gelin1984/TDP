@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe UsersController, type: :controller do
-    @user = User.create!(email:"greg@gmail.com", password:"blablabla")
-    @user2 = User.create!(email:"fafafa@gmail.com", password:"blebleble")
+  
+    @user = FactoryBot.create(:user)
+    @user2 = FactoryBot.create(:user)
 
   describe 'GET #show' do
      context 'when a user is logged in' do
@@ -30,6 +31,5 @@ describe UsersController, type: :controller do
        end
      end
   end
-
+  
 end
-
