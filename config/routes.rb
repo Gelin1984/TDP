@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get "home/faq"
 
   post "home/thank_you"
+
+  post 'payments/create'
+  
+  get 'payments/create'
   
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :products do
