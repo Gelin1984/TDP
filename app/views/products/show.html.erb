@@ -1,9 +1,7 @@
 <div class="row">
 <div class="col-md-4"></div>
 <div class="col-sm-6">
-</div>
-</div>
-  <br/>
+ <br/>
   <br/>
     <p>
       <span class="glyphicon glyphicon-globe"><strong>Product</strong></span>
@@ -16,9 +14,9 @@
       <%= @product.description %>
     </p>
     <p>
-      <span class="glyphicon glyphicon-usd"><strong>Price </strong>
+      <span class="glyphicon glyphicon-usd"><strong>Price </strong></span>
         <br/>
-        <%= @product.price %> </span>
+        <%= @product.price %> 
       </p>
     <p>
     <%= form_with(url: '/payments/create') do |form| %>
@@ -49,3 +47,6 @@
           <%= render 'comments' %>
           <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>     
         </div>
+      </div>
+    </div>
+  </div>
