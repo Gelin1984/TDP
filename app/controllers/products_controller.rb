@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  # GET /products/1/edit
+  # GET /products/1/edi
   def edit
   end
 
