@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get "home/index"
 
-  get "home/about"
-
   get "home/landing_page"
   
   get "home/about"
@@ -20,8 +18,6 @@ Rails.application.routes.draw do
   post "home/thank_you"
 
   post 'payments/create'
-  
-  get 'payments/create'
   
   resources :orders, only: [:index, :show, :create, :destroy]
   resources :products do

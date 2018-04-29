@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
                 source: token,
                 description: params[:stripeEmail]
             )
-        end
+        
 
 		    if charge.paid
             Order.create(
@@ -33,6 +33,6 @@ class PaymentsController < ApplicationController
   redirect_to product_path(@product)
   
 end
-
+end
 
 
