@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { registrations: "registrations" }
  
   root "home#index"
 
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "home/contact"
 
   get "home/faq"
+
+  get 'payments/create'
 
   post "home/thank_you"
 

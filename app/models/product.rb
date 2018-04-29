@@ -7,7 +7,10 @@ class Product < ApplicationRecord
   has_many :comments
 
   def self.search(search_term)
-    Product.where("name LIKE ?", "%#{search_term}%")
+    if Rails.env.production?
+    else
+      Product.where("name LIKE ?", "%#{search_term}%")
+    end
   end
 
   def average_rating
