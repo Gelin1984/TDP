@@ -9,7 +9,9 @@ class UserMailer < ApplicationMailer
   end
 
   def welcome(user)
-  	mail (to: user.email, subject: "Welcome")
+  	mail (from: 'gregory.dopart@gmail.com',
+		to: user.email, 
+		subject: "Welcome")
 end
 
 end   
