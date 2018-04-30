@@ -12,5 +12,13 @@ Product.create(name: "seed-generated product", description: "I also created this
 
 1. youtube
 2. book
-4. index funds
-5. selling portfolios
+4. index funds .
+5. selling portfolios .
+6 dropshipping .
+
+
+1. selling portfolios to teachers
+2. drop shipping
+3. index funds
+4. youtube channel
+5. book tantiems
