@@ -10,15 +10,12 @@ Product.create(name: "static website", description: "cheap stuff!", image_url: "
 Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!", image_url: "http://catlintucker.com/wp-content/uploads/2013/07/Screen-shot-2013-07-06-at-9.24.31-AM.png")
 
 
-1. youtube
-2. book
-4. index funds .
-5. selling portfolios .
-6 dropshipping .
 
 
 1. selling portfolios to teachers
+2. FutureNet Add Pro
 2. drop shipping
 3. index funds
 4. youtube channel
 5. book tantiems
+6. Online shops with figurines :-) 

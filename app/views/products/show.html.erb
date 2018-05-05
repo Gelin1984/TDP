@@ -1,51 +1,48 @@
-<div class="row">
-<div class="col-md-4"></div>
-<div class="col-sm-6">
- <br/>
-  <br/>
-    <p>
-      <span class="glyphicon glyphicon-globe"><strong>Product</strong></span>
-      <br/>
-      <%= @product.name %>
-    </p>
-    <p>
-      <span class="glyphicon glyphicon-hand-right"><strong> Description</strong></span>
-      <br/>
-      <%= @product.description %>
-    </p>
-    <p>
-      <span class="glyphicon glyphicon-usd"><strong>Price </strong></span>
-        <br/>
-        <%= @product.price %> 
-      </p>
-    <p>
-    <%= form_with(url: '/payments/create') do |form| %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-      </p>
-    <p>Average Rating: 
-    <div class="rated" data-score="<%= @product.average_rating %>"></div>
-    </p>
-    <br/>
-    <br/>
-    <p>
-    <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
-    </p>
-    <br/>
-      <%= link_to 'Edit', edit_product_path(@product),class: "btn btn-primary" %> 
-      <%= link_to 'Back', products_path, class: "btn btn-primary" %>
-      <div class="col-md-6 col-lg-6 col-xs-12 product_div">
-        <h4 class="product_title"> <span class="glyphicon glyphicon-pencil"></span> Comments </h4>
-        <div id="comments">
-          
-          <% end %>
-          <div class="alert alert-info" style="display: none" role="alert">
-            A new comment was posted!
-          </div>
-          <%= render 'new_comment' %>
-          <%= render 'comments' %>
-          <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>     
-        </div>
-      </div>
-    </div>
-  </div>
+<p id="notice"><%= notice %></p>
+
+<% cache @product do %>
+
+  <p data-product-id= "<%= @product.id %>">
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+<% end %>
+
+<p>
+  <strong>Image url:</strong>
+  <% if @product.image_url.present? %>
+  <%= image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
+<%= form_tag "/payments/create" do %>
+  <%= render partial: "shared/stripe_checkout_button" %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
+<% end %>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
+<%= render 'new_comment' %>
+
+<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+
+<%= render 'comments' %>
+
+<%= will_paginate @comments %>
+
+<%= @product.comments.order(rating: :desc).first %>
+<%= @product.highest_rating_comment %>
