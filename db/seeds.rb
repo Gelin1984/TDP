@@ -14,8 +14,10 @@ Product.create(name: "seed-generated product", description: "I also created this
 
 1. selling portfolios to teachers
 2. FutureNet Add Pro
-2. drop shipping
-3. index funds
-4. youtube channel
-5. book tantiems
-6. Online shops with figurines :-) 
+3. Online shops with figurines :-) 
+
+4. drop shipping
+5. index funds
+
+6. youtube channel
+7. book tantiems
