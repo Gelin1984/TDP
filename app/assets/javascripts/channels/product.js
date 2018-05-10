@@ -1,10 +1,6 @@
 App.product = App.cable.subscriptions.create("ProductChannel", {
   connected: function() {
     // Called when the subscription is ready for use on the server
-    $(document).on('turbolinks:load', function() {
-      App.product.listen_to_comments();
-    });
-    App.product.listen_to_comments();
   },
 
   disconnected: function() {
@@ -13,18 +9,20 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    $(".alert.alert-info").show();
-    //console.log(data);
-    $('.product-reviews').prepend(data.comment);
+    $(".alert-info").show().delay(2000).fadeOut(800);
+    $(".product-reviews").prepend(data.comment);
     $("#average-rating").attr('data-score', data.average_rating);
+    $("#collapseComments").addClass('in');
     refreshRating();
   },
-
-  listen_to_comments: function(){
+  
+  listen_to_comments: function() {
     return this.perform('listen', {
       product_id: $("[data-product-id]").data("product-id")
     });
-
   }
 });
 
+$(document).on('turbolinks:load', function() {
+  App.product.listen_to_comments();
+});
