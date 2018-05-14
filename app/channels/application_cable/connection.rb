@@ -3,16 +3,15 @@ module ApplicationCable
     identified_by :current_user
 
     def connect
-    
+      self.current_user = find_verified_user
     end
 
-    def disconnect 
-    
-    end
-  end
+    def disconnect
 
-  protected
-  
+    end
+
+    protected
+
     def find_verified_user
       if verified_user = request.env['warden'].user
         verified_user
@@ -20,9 +19,5 @@ module ApplicationCable
         reject_unauthorized_connection
       end
     end
-    
-    def connect
-      self.current_user = find_verified_user
-    end
-
+  end
 end

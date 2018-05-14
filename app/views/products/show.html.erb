@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <% cache @product do %>
 
   <p data-product-id= "<%= @product.id %>">
@@ -25,23 +25,25 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
-
-<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-<p>Highest Rating: <%= @product.highest_rating_comment&.rating %> </p>
-<p>Lowest Rating: <%= @product.lowest_rating_comment&.rating %> </p>
-
 <%= form_tag "/payments/create" do %>
   <%= render partial: "shared/stripe_checkout_button" %>
   <%= hidden_field_tag(:product_id, @product.id) %>
 <% end %>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
-
+<br>
+<br>
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+<p>Highest Rating: <%= @product.highest_rating_comment&.rating %> </p>
+<p>Lowest Rating: <%= @product.lowest_rating_comment&.rating %> </p>
+<hr/>
+<br>
+<h2>Add a Comment</h2>
+<br>
 <%= render 'new_comment' %>
 
 
 <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 <%= render 'comments' %>
 
-<%= will_paginate @comments %>
+<%= will_paginate @comments %><center>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

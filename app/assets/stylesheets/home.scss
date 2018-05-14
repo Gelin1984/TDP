@@ -1,3 +1,55 @@
+/*Navigation Bar*/
+
+ .navbar {
+   background-color: black;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   padding: 0px;
+   display: right;
+   flex-wrap: wrap;
+   padding-left: 0;
+   margin-bottom: 0;
+   list-style: none;
+   z-index: 1;
+ }
+
+ .navbar ul li a {
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   color: white;
+ }
+
+ .navbar a {
+   padding-top: 20px;
+   padding-right: 10px;
+   padding-bottom: 20px;
+   padding-left: 10px;
+   text-transform: uppercase;
+   color: white;
+   vertical-align: center
+ }
+
+
+ .navbar ul {
+   float:left;
+ }
+
+ .navbar a:hover, .navbar a:hover span {
+   color: red;
+   text-decoration: none;
+   transition: color 2000ms;
+ }
+
+ .projectName {
+     text-transform: uppercase;
+     font-size: 1.5em;
+     font-weight: bold;
+ }
+
+ .projectName a {
+    color: white;
+}
  
 
 .open-nav {
@@ -182,4 +234,14 @@ p {
     -ms-transform: translateY(20px);
     transform: translateY(20px);
   }
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
 }
