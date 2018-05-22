@@ -5,7 +5,7 @@ before_action :authenticate_user!
     if current_user.admin?
       @orders = Order.include(:products)
     else
-      @orders = current_user.orders.include(:products)
+      @orders = current_user.orders.include(:product)
 
     end
   end
