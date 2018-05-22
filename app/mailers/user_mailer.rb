@@ -10,5 +10,11 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     mail(to: user.email, subject: "Welcome")
   end
+
+  def order_placed(user, order)
+  	@user = user
+  	@product = order.product
+  	@order = order
+  	mail(to: user.email, subject: "Thank You")
 end   
 

@@ -43,7 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'sqlite3', '~> 1.3.13'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
-  gem 'factory_girl_rails', '~> 4.9'
+  gem 'factory_bot_rails'
 end
 
 group :development do
