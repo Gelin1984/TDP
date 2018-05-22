@@ -17,4 +17,4 @@ class UserMailer < ApplicationMailer
   	@order = order
   	mail(to: user.email, subject: "Thank You")
 end   
-
+end
