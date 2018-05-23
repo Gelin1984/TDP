@@ -3,9 +3,12 @@ class UserMailer < ApplicationMailer
 
   def contact_form(email, name, message)
     @message = message
-    mail( to: 'gregory.dopart@gmail.com',
+    mail( from:email,
+      to: 'gregory.dopart@gmail.com',
     subject: "A new contact form message from #{name}, #{email}")
+
   end
+
 
   def welcome(user)
     mail(to: user.email, subject: "Welcome")
@@ -18,3 +21,4 @@ class UserMailer < ApplicationMailer
   	mail(to: user.email, subject: "Thank You")
 end   
 end
+ 

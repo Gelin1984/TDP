@@ -3,9 +3,9 @@ before_action :authenticate_user!
 
   def index
     if current_user.admin?
-      @orders = Order.include(:products)
+      @orders = Order.includes(:product)
     else
-      @orders = current_user.orders.include(:product)
+      @orders = current_user.orders.includes(:product)
 
     end
   end
