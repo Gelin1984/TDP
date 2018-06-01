@@ -1,17 +1,38 @@
-<div class="row">
-    <div class="col-sm-3"></div>
-
-    <div class="col-sm-6">
-
-  <% @orders.each do |order| %>
-  
-      <h1>
-        Order # <%= order.id %>:
-        <%= link_to order.product.name, order.product %>
-      </h1>
-      <p><%= order.product.description %></p>
-      <strong>$ <%= order.product.price %></strong>
-    </div><!-- /col -->
-  <% end %>
+<div class="page-header page-header-sm" data-parallax="false">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="motto text-center">
+      <h1 id="head">Dronnie</h1>
+    </div>
+  </div>
 </div>
+<br>
+<div class="container text-center">
+  <h1 class="text-center"> My Orders</h1>
+  <div class="row">
+    <% @orders.each do |order| %>
 
+      <div class="col-md-12 card list">
+        <h4 class="text-info">
+          Order #<%= order.id %>
+        </h4>
+        <%= link_to order.product do %>
+        <h4 class="text-success">
+          Game:
+          <%= order.product.name unless order.product.name.blank? %>
+        </h4>
+        <%= image_tag(order.product.image_url, :class => "img-fluid p-2") %>
+      <% end %>
+      <h4 class="text-danger text-center">
+        <%= "Price: #{order.total} $" %>
+      </h4>
+      <br>
+      <p class="text-primary">
+        <%= "Issued by: #{order.user.first_name}" unless order.user.first_name.blank? %>
+      </p>
+      <%= link_to 'View', order, :class => "btn btn-info btn-link btn-lg" %>
+    </div>
+<% end %>
+</div>
+<%= link_to 'Back', root_path, :class => " btn btn-defualt btn-link btn-lg" %>
+</div>

@@ -1,27 +1,26 @@
-<center><h1>Contact Us</h1></center>
 
-<%= flash[:notice] %>
-<div class="row">
-    <div class="col-sm-3"></div>
+<div id="form">
 
-    <div class="col-sm-6">
-<%= form_with(url:"/home/thank_you", method: "post", local: true) do |form| %>
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
 
-<div class="row">
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
-  </div>
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
-  </div>
-  <div class="form-group">
-    <%= form.label :message %>
-    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
-  </div>
+<form id="waterform" method="post">
+
+<div class="formgroup" id="name-form">
+    <label for="name">Your name*</label>
+    <input type="text" id="name" name="name" />
 </div>
-<%= form.submit "Send", class: "form_label" %>
+
+<div class="formgroup" id="email-form">
+    <label for="email">Your e-mail*</label>
+    <input type="email" id="email" name="email" />
 </div>
+
+<div class="formgroup" id="message-form">
+    <label for="message">Your message</label>
+    <textarea id="message" name="message"></textarea>
 </div>
-<% end %>
+
+    <input type="submit" value="Send your message!" />
+</form>
+</div>
