@@ -1,25 +1,28 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+   <div class="container">
+  <div class="page-header">
+  </div>
+</div>
+<div class="container">
+  <div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators --> 
+  <ol class="carousel-indicators carousel-indicators-numbers">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active">1</li>
+    <li data-target="#carousel-example-generic" data-slide-to="1">2</li>
+    <li data-target="#carousel-example-generic" data-slide-to="2">3</li>
+    <br>
   </ol>
 
-   <!-- Wrapper for slides -->
+  <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
-    <div class="item<%= " active" if product == @products.first %>">
-       <center><%= image_tag(product.image_url) %></center>
-      <div class="carousel-caption">
-        <%= product.name %>
-        <br>
-        <br>
-        <br>
-        <%= product.price %>
-        $
-      </div>
+      <div class="item<%= " active" if product == @products.first %>">
+        <center><%= link_to (image_tag product.image_url), product %></center>
+        <div class="carousel-caption">
+          <%= product.name %>
         </div>
+      </div>
     <% end %>
   </div>
 

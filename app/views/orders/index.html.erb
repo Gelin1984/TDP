@@ -21,7 +21,7 @@
           Model:
           <%= order.product.name unless order.product.name.blank? %>
         </h4>
-        <%= image_tag(order.product.image_url, :class => "img-fluid p-2") %>
+        <%= image_tag(order.product.image_url, :class => "img-responsive") %>
       <% end %>
       <h4 class="text-danger text-center">
         <%= "Price: #{order.total} $" %>
