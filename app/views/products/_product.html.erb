@@ -1,9 +1,10 @@
-<div class="col-sm-2 col-md-4">
+<div class="col-sm-2 col-md-6">
 	<center>
     <% cache product do %>
         <h1><%= link_to product.name, product %></h1>
         <p><%= product.description %></p>
-        <p><%= product.price %></p>
+        <p><%= product.price %>$</p>
+
         <td><%= image_tag product.image_url, class: "img-responsive" %></td>
         <% if current_user && current_user.admin? %>
         <td><%= link_to 'Show', product, class: "btn btn-primary" %></td>

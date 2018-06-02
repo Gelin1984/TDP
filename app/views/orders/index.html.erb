@@ -18,7 +18,7 @@
         </h4>
         <%= link_to order.product do %>
         <h4 class="text-success">
-          Game:
+          Model:
           <%= order.product.name unless order.product.name.blank? %>
         </h4>
         <%= image_tag(order.product.image_url, :class => "img-fluid p-2") %>

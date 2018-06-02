@@ -12,8 +12,6 @@ Rails.application.routes.draw do
 
   get "home/contact"
 
-  get "home/faq"
-
   get 'payments/create'
 
   post "home/thank_you"
