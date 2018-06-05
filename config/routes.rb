@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "home/index"
 
   get "home/landing_page"
+
+  get "home/project"
   
   get "home/about"
 

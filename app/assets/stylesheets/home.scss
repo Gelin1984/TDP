@@ -66,7 +66,7 @@ h1 {
 }
 
 .carousel-indicators {
-    bottom: -10px;
+    bottom: 30px;
 }
 
 /* Animation webkit */
@@ -395,20 +395,6 @@ p {
 
 .content {
   padding: 50px 2% 250px;
-}
-
-.hero {
-  position: relative;
-  background: url('https://image.freepik.com/free-photo/school-blackboard_1048-4547.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  text-align: center;
-  color: #fff;
-  padding-top: 110px;
-  min-height: 500px;
-  letter-spacing: 2px;
-  font-family: "Montserrat", sans-serif;
 }
 
 .hero h1 {
