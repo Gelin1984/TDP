@@ -69,6 +69,27 @@ h1 {
     bottom: 30px;
 }
 
+/* Home Page Video */
+
+.video-container {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  @media(min-width: 600px) {
+    height: 100vh;
+  }
+}
+
+video {
+  object-fit: cover; // Set the magic
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
 /* Animation webkit */
 @-webkit-keyframes myfirst {
   0% {
@@ -816,4 +837,3 @@ i dont wanna mess with JS so I decided to go this way*/
     display: none;
   }
 }
-
