@@ -2,28 +2,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <%= csrf_meta_tags %>
 <body>
-  <section class="video-container">
+  <section class="video-container-responsive">
   <video src="https://storage.googleapis.com/coverr-main/mp4/Keep_Running.mp4" autoplay loop playsinline muted></video>
   <div class="callout">
-    <h1>Object-Fit 👍</h1>
-    <div>The CSS Background-Size: Cover for Inline Images &amp; Videos</div>
-  </div>
-  <div class="support">
-     <a href="http://caniuse.com/#search=object-fit">Browser Support</a><br>
-     <a href="https://github.com/jonathantneal/fitie">Need to support IE &amp; Edge?</a>
   </div>
 </section>
-    <div class="cover-image">
+    <div class="cover-image img-responsive">
       <div class="cover-page text-center">
         <div class="hero">
-          <h1 class="hero-title" data-aos="zoom-in">Welcome to the world of </h1>
-          <h2 class="hero-text" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">drones</h2>
+          <h1 class="hero-title">Dronnie</h1>
         </div>
-        <span class="hero-scroll" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">Scroll down <br><a href="#main"><i class="fa fa-chevron-down bounce chevron"></i></a></span>
 
       </div>
     </div>
-
 
     <main class="dhoni-main" id="main">
       <div class="container" data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in"> <!-- I again had to add this extra div or container to fix issue I had with AOS library I keep sending me to mid of dhoni-intro, not at the begging -->
@@ -44,13 +35,12 @@
 <br>
 <br>
 <br>
-    <div class="cover-image-2" data-aos="fade-up" data-aos-duration="1000"  data-aos-easing="ease-in" >
+    <div class="cover-image-2 img-responsive", data-aos="fade-up" data-aos-duration="1000"  data-aos-easing="ease-in" >
     </div>
 
     <section class="container dhoni-timeline" data-aos="fade-up" data-aos-duration="600" data-aos-easing="ease-in">
       <br>
       <h2 class="text-center" id="title-mobile">In  our shop you will find</h2>
-      <h2 class="text-center" id="title-desktop">In Our Offer You Will Find</h2>
       <hr class="hr-style">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
