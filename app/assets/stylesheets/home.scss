@@ -142,6 +142,7 @@ div.container-fluid {
 .btn.btn-primary {
   color: black;
   background-color: lightblue;
+  margin-top:25px;
 }
 
 .navbar a {
@@ -368,6 +369,7 @@ p {
   line-height: 2;
 }
 
+
 .content {
   padding: 50px 2% 250px;
 }
@@ -393,8 +395,15 @@ p {
   opacity: 0.8;
 }
 
+.img-responsive {
+  display: block;
+  max-width: 70%;
+  height: auto;
+ }
+
 @media screen and (max-height: 410px) {
   .hero-text {
     display: none;
   }
+  
 }
