@@ -26,7 +26,7 @@ h3 {
 }
 .action a {
   display:inline-block;
-  padding:5px 10px; 
+  padding:5px 10px;
   background:#f30;
   color:#fff;
   text-decoration:none;
@@ -98,7 +98,7 @@ h1 {
         margin: 0 2px;
         width: 30px;
         height: 30px;
-        background-color: #337ab7;        
+        background-color: #337ab7;
       }
     }
 }
@@ -216,8 +216,8 @@ video {
 
 .fish {
   background-image: url('https://cdn.dribbble.com/users/988145/screenshots/3462363/drone-dribbb.gif');
-  width: 335px;
-  height: 204px;
+  width: 400px;
+  height: 304px;
   margin-left: -235px;
   position: absolute;
   animation: myfirst 24s;
@@ -250,7 +250,7 @@ form {
   margin: 0 auto;
   width: 500px;
   padding-top: 40px;
-  color: white;
+  color: darkgrey;
   position: relative;
 }
 
@@ -329,18 +329,8 @@ label {
   padding-top: 2px;
 }
 
-.formgroup {
-  background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');
-}
 
-.formgroup-active {
-  background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo.png');
-}
 
-.formgroup-error {
-  background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
-  color: red;
-}
 /* End of Flying Drones In Contact Page*/
 
 
@@ -405,5 +395,5 @@ p {
   .hero-text {
     display: none;
   }
-  
+
 }
